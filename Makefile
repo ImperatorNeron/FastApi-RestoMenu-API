@@ -1,5 +1,6 @@
 DC = docker compose
 DL = docker logs
+EXEC = docker exec -it
 
 APP_FILE = docker_compose/app.yaml
 APP_CONTAINER = main-app
@@ -8,6 +9,10 @@ STORAGES_FILE = docker_compose/storages.yaml
 STORAGES_CONTAINER = postgresql-container
 
 ENV = --env-file .env
+
+ALREV = alembic revision
+ALUP = alembic upgrade
+ALDOWN = alembic downgrade
 
 .PHONY: storages
 storages:
@@ -33,3 +38,18 @@ app-logs:
 app-down:
 	${DC} -f ${APP_FILE} -f ${STORAGES_FILE} ${ENV} down
 
+.PHONY: migrations
+migrations:
+	${EXEC} ${APP_CONTAINER} ${ALREV} -m "$(message)"
+
+.PHONY: auto-migrations
+auto-migrations:
+	${EXEC} ${APP_CONTAINER} ${ALREV} --autogenerate -m "$(message)"
+
+.PHONY: migrate-up
+migrate-up:
+	${EXEC} ${APP_CONTAINER} ${ALUP} head
+
+.PHONY: migrate-down
+migrate-down:
+	${EXEC} ${APP_CONTAINER} ${ALDOWN} -1

@@ -21,13 +21,19 @@ cd your_repository
 
 ### Implemented Commands
 
+#### Application
 - ```make app``` - up application
 - ```make app-logs``` - follow the logs in app container
 - ```make app-down``` - down application and all 
+#### Storages
 - ```make storages``` - up PostgreSql
 - ```make storages-logs``` - follow the logs in postgres container
 - ```make storages-down``` - down PostgreSql
-
+#### Migrations
+- ```make migrations``` - do alembic revision
+- ```make auto-migrations``` - do alembic revision with autogenerate
+- ```make migrate-up``` - do migrations (to head)
+- ```make migrate-down``` - do migrations downgrate (-1)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://en.wikipedia.org/wiki/MIT_License) file for details.

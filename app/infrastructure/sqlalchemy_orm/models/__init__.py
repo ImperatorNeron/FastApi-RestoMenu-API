@@ -1,0 +1,1 @@
+from app.infrastructure.sqlalchemy_orm.models.category import Category  # noqa

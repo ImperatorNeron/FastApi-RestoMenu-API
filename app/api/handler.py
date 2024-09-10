@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from api.schemas import PingResponse
-from api.v1.categories.handler import router as category_router
+from app.api.schemas import PingResponse
+from app.api.v1.categories.handler import router as category_router
 
 
 router = APIRouter(prefix="/api")

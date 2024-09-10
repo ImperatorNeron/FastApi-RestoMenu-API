@@ -6,9 +6,9 @@ services:
     container_name: main-app
     ports:
       - "8000:8000"
-    command: "sh /entrypoint.sh"
+    command: "sh /application/entrypoint.sh"
     volumes:
-      - ../app/:/app/
+      - ../app/:/application/app/
     env_file:
       - ../.env
     depends_on:

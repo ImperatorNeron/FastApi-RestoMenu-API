@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from api.schemas import ApiResponse
-from api.v1.categories.schemas import (
+from app.api.schemas import ApiResponse
+from app.api.v1.categories.schemas import (
     CategoryRead,
     ListCategoryReadSchema,
 )
