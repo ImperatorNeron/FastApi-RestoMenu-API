@@ -23,7 +23,10 @@ cd your_repository
 
 - ```make app``` - up application
 - ```make app-logs``` - follow the logs in app container
-- ```make app-down``` - down application and all infrastructure
+- ```make app-down``` - down application and all 
+- ```make storages``` - up PostgreSql
+- ```make storages-logs``` - follow the logs in postgres container
+- ```make storages-down``` - down PostgreSql
 
 ## License
 
