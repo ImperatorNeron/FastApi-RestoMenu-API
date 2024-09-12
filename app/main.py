@@ -3,8 +3,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from app.api.handler import router
 from app.infrastructure.sqlalchemy_orm.database import database_helper
+from app.presentation.api.handlers import router
 
 
 @asynccontextmanager

@@ -1,12 +1,12 @@
 from fastapi import APIRouter
 
-from app.api.schemas import PingResponse
-from app.api.v1.categories.handler import router as category_router
+from app.presentation.api.schemas import PingResponse
+from app.presentation.api.v1.handlers import router as v1_router
 
 
 router = APIRouter(prefix="/api")
 
-router.include_router(router=category_router)
+router.include_router(router=v1_router)
 
 
 @router.get("/ping", response_model=PingResponse)
